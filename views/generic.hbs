@@ -67,6 +67,39 @@ app.get("/{*splat}", (req, res) =&gt; {
           </article>
         </section>
 
+        <section class="section mvc-section" aria-labelledby="mvc-title">
+          <div class="section-heading">
+            <p class="kicker">Architecture pattern</p>
+            <h2 id="mvc-title">Handlebars inside MVC.</h2>
+            <p>Handlebars does not implement MVC by itself. In an Express application, it powers the View layer while the server coordinates the other responsibilities.</p>
+          </div>
+
+          <div class="mvc-grid">
+            <article class="mvc-card">
+              <span>M</span>
+              <p class="kicker">Model</p>
+              <h3>Application data</h3>
+              <p>Would contain database access, entities and business rules. This course project has no persistent model yet.</p>
+            </article>
+            <article class="mvc-card mvc-active">
+              <span>V</span>
+              <p class="kicker">View</p>
+              <h3>Handlebars templates</h3>
+              <p>The <code>.hbs</code> files receive data, reuse partials and generate the final HTML sent to the browser.</p>
+            </article>
+            <article class="mvc-card">
+              <span>C</span>
+              <p class="kicker">Controller</p>
+              <h3>Express handlers</h3>
+              <p>Route handlers receive requests, prepare view data and choose the response rendered with <code>res.render()</code>.</p>
+            </article>
+          </div>
+
+          <div class="mvc-flow" aria-label="MVC request flow">
+            <code>Browser request</code><span>→</span><code>Express controller</code><span>→</span><code>Model data</code><span>→</span><code>Handlebars view</code><span>→</span><code>HTML response</code>
+          </div>
+        </section>
+
         <section class="section route-map">
           <div class="section-heading">
             <p class="kicker">Routing map</p>

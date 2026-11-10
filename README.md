@@ -5,6 +5,14 @@ A small web server built with **Node.js**, **Express 5**, **TypeScript**, and
 static asset delivery, route aliases, environment variables, and custom 404
 handling.
 
+## Live demo
+
+[View the application deployed on Railway](https://webserver-node-production-ff7bb761.up.railway.app/).
+
+This deployment was created with Railway for educational purposes, to
+demonstrate how a Node.js web server can be configured and published in a
+production environment.
+
 ## Features
 
 - TypeScript with native ES modules.
@@ -50,7 +58,7 @@ private environment files.
 Start the development server:
 
 ```bash
-yarn start
+yarn dev
 ```
 
 The script runs:
@@ -71,6 +79,15 @@ http://localhost:8081
 ```
 
 Stop the server with `Ctrl+C`.
+
+For production environments such as Railway, run:
+
+```bash
+yarn start
+```
+
+The production command uses the `PORT` environment variable supplied by the
+hosting platform and does not require a local `.env` file.
 
 ## Available routes
 
@@ -141,6 +158,27 @@ res.render("home", {
 
 The values can be printed with Handlebars expressions such as `{{title}}` and
 `{{name}}`.
+
+### MVC responsibilities
+
+Handlebars is the **View** layer in an MVC-style Express application; it does
+not implement the complete MVC pattern by itself:
+
+- **Model:** owns application data, database access, and business rules. This
+  course project does not have a persistent Model layer yet.
+- **View:** the `.hbs` templates and partials receive values and produce the
+  final HTML response.
+- **Controller:** the Express route handlers receive requests, prepare template
+  data, and select a view through `res.render()`.
+
+The current request flow is:
+
+```text
+Browser → Express route/controller → optional model data → Handlebars view → HTML
+```
+
+For a larger application, route handlers can be moved into dedicated controller
+modules and database operations into model or service modules.
 
 ### Partials
 

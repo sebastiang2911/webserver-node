@@ -136,6 +136,20 @@ h1 em, h2 em { color: var(--green-dark); font-family: Georgia, serif; font-weigh
 .dark-card p:not(.kicker) { color: #a4aea7; }
 .dark-card .concept-number { color: #344039; }
 .dark-card pre { border: 1px solid #334238; background: #17231c; }
+.mvc-section { border-radius: 32px; background: var(--surface); box-shadow: var(--shadow); }
+.mvc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.mvc-card { min-height: 280px; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: #f4f2eb; }
+.mvc-card > span { display: grid; width: 46px; height: 46px; margin-bottom: 30px; place-items: center; border-radius: 13px; color: white; font: 500 1rem var(--mono); background: var(--green-dark); }
+.mvc-card h3 { margin: 8px 0 12px; font-size: 1.25rem; }
+.mvc-card > p:last-child { margin: 0; color: var(--muted); line-height: 1.65; }
+.mvc-card code { font-size: .75rem; }
+.mvc-card.mvc-active { color: white; border-color: var(--dark); background: var(--dark); }
+.mvc-card.mvc-active > span { color: var(--dark); background: var(--lime); }
+.mvc-card.mvc-active .kicker { color: var(--lime); }
+.mvc-card.mvc-active > p:last-child { color: #a4aea7; }
+.mvc-flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 24px; border: 1px dashed var(--line); border-radius: 16px; }
+.mvc-flow code { padding: 8px 10px; border-radius: 7px; font-size: .68rem; background: #e8e9e1; }
+.mvc-flow span { color: var(--green-dark); }
 .route-map { padding-top: 20px; }
 .route-table { width: 100%; border-top: 1px solid var(--line); }
 .route-row { display: grid; grid-template-columns: .5fr 1fr 1.5fr; gap: 20px; align-items: center; padding: 18px; border-bottom: 1px solid var(--line); }
@@ -197,6 +211,7 @@ h1 em, h2 em { color: var(--green-dark); font-family: Georgia, serif; font-weigh
   .flow-grid { grid-template-columns: 1fr; }
   .flow-card.featured { transform: none; }
   .concept-grid, .tool-grid { grid-template-columns: 1fr; }
+  .mvc-grid { grid-template-columns: 1fr; }
   .concept-wide { grid-column: auto; grid-template-columns: 1fr; gap: 28px; }
   .tool-grid { padding-bottom: 70px; }
   .cta-panel { align-items: flex-start; flex-direction: column; }
