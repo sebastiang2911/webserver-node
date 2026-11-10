@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Node.js and Express fundamentals implemented in this course project." />
+    <title>{{title}} | Node Course</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body id="top">
+    <div class="page-shell">
+      {{> header}}
+
+      <main>
+        <section class="page-hero">
+          <p class="eyebrow"><span></span> Module 01 / Fundamentals</p>
+          <h1>How this server <em>works.</em></h1>
+          <p>Four core ideas power the project, from starting Node to rendering a reusable page.</p>
+        </section>
+
+        <section class="concept-grid" aria-label="Course concepts">
+          <article class="concept-card concept-wide">
+            <div class="concept-number">01</div>
+            <div>
+              <p class="kicker">Runtime</p>
+              <h2>Node.js</h2>
+              <p>Node runs JavaScript outside the browser. The entry file reads the environment, creates the application and keeps the HTTP server listening for requests.</p>
+              <pre><code>const port = process.env.PORT;
+
+app.listen(port, () =&gt; {
+  console.log(`Server on ${port}`);
+});</code></pre>
+            </div>
+          </article>
+
+          <article class="concept-card">
+            <div class="concept-number">02</div>
+            <p class="kicker">Framework</p>
+            <h2>Express</h2>
+            <p>Routes connect HTTP methods and paths to focused handler functions.</p>
+            <pre><code>app.get("/generic", (_req, res) =&gt; {
+  res.render("generic");
+});</code></pre>
+          </article>
+
+          <article class="concept-card accent-card">
+            <div class="concept-number">03</div>
+            <p class="kicker">Templates</p>
+            <h2>Handlebars</h2>
+            <p>Views combine HTML with server data. Partials keep navigation and footer markup in one place.</p>
+            <div class="mini-code"><span>&#123;&#123;&gt; header&#125;&#125;</span><span>&#123;&#123;title&#125;&#125;</span></div>
+          </article>
+
+          <article class="concept-card concept-wide dark-card">
+            <div class="concept-number">04</div>
+            <div>
+              <p class="kicker">Middleware</p>
+              <h2>Static assets &amp; 404s</h2>
+              <p>Express serves CSS and JavaScript from <code>public</code>. If no route matches, the final wildcard renders a custom response with the correct status.</p>
+              <pre><code>app.use(express.static("public"));
+
+app.get("/{*splat}", (req, res) =&gt; {
+  res.status(404).render("404");
+});</code></pre>
+            </div>
+          </article>
+        </section>
+
+        <section class="section route-map">
+          <div class="section-heading">
+            <p class="kicker">Routing map</p>
+            <h2>One app, multiple destinations.</h2>
+          </div>
+          <div class="route-table" role="table" aria-label="Application routes">
+            <div class="route-row route-head" role="row"><span>Method</span><span>Path</span><span>Result</span></div>
+            <div class="route-row" role="row"><span class="method">GET</span><code>/</code><span>Home view</span></div>
+            <div class="route-row" role="row"><span class="method">GET</span><code>/generic</code><span>Fundamentals view</span></div>
+            <div class="route-row" role="row"><span class="method">GET</span><code>/elements</code><span>Toolkit view</span></div>
+            <div class="route-row" role="row"><span class="method">GET</span><code>/{*splat}</code><span>404 view</span></div>
+          </div>
+        </section>
+
+        <section class="next-link">
+          <p>Continue the tour</p>
+          <a href="/elements">Explore the developer toolkit <span>→</span></a>
+        </section>
+      </main>
+
+      {{> footer}}
+    </div>
+  </body>
+</html>

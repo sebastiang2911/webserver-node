@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A personal showcase of what Sebastian built and learned in a Node.js course." />
+    <title>{{title}} | {{name}}</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body id="top">
+    <div class="page-shell">
+      {{> header}}
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> Learning log / 06-webserver</p>
+            <h1 id="hero-title">From a blank file to a <em>working web server.</em></h1>
+            <p class="hero-lead">
+              A small Node.js project that brings together routing, static files,
+              environment variables, TypeScript and server-side templates.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="/generic">Explore the concepts</a>
+              <a class="text-link" href="/elements">View the toolkit <span>↗</span></a>
+            </div>
+          </div>
+
+          <div class="terminal" aria-label="Terminal showing the server running">
+            <div class="terminal-bar">
+              <span></span><span></span><span></span>
+              <p>~/06-webserver</p>
+            </div>
+            <div class="terminal-body">
+              <p><span class="prompt">$</span> yarn start</p>
+              <p class="muted">[nodemon] starting `node index.ts`</p>
+              <p><span class="success">●</span> Server listening on port 8081</p>
+              <p class="muted">GET / <span class="status">200</span> 4.2 ms</p>
+              <p class="muted">GET /generic <span class="status">200</span> 2.8 ms</p>
+              <p><span class="prompt">_</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section learning-section" aria-labelledby="learning-title">
+          <div class="section-heading">
+            <p class="kicker">What I implemented</p>
+            <h2 id="learning-title">The request-to-response journey</h2>
+            <p>Each piece has one job. Together they turn a URL into a complete HTML response.</p>
+          </div>
+
+          <div class="flow-grid">
+            <article class="flow-card">
+              <span class="step">01</span>
+              <div class="flow-icon">→</div>
+              <h3>Request</h3>
+              <p>The browser asks Express for a resource through a URL and an HTTP method.</p>
+              <code>GET /generic</code>
+            </article>
+            <article class="flow-card featured">
+              <span class="step">02</span>
+              <div class="flow-icon">⌘</div>
+              <h3>Route</h3>
+              <p>Express matches the request and sends data to the correct Handlebars view.</p>
+              <code>res.render("generic")</code>
+            </article>
+            <article class="flow-card">
+              <span class="step">03</span>
+              <div class="flow-icon">✓</div>
+              <h3>Response</h3>
+              <p>The rendered document returns with the right HTTP status and static assets.</p>
+              <code>200 OK · text/html</code>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split-section">
+          <div>
+            <p class="kicker">Course milestones</p>
+            <h2>Small lessons, one real application.</h2>
+          </div>
+          <ol class="milestone-list">
+            <li><span>01</span><div><strong>Node foundations</strong><p>Modules, scripts, environment variables and the event-driven runtime.</p></div></li>
+            <li><span>02</span><div><strong>Express server</strong><p>Routes, middleware, static content and HTTP response handling.</p></div></li>
+            <li><span>03</span><div><strong>Dynamic views</strong><p>Handlebars templates, shared partials and data passed from the server.</p></div></li>
+            <li><span>04</span><div><strong>Developer workflow</strong><p>TypeScript, Nodemon, tsx, Yarn and a reproducible project setup.</p></div></li>
+          </ol>
+        </section>
+
+        <section class="cta-panel">
+          <div>
+            <p class="kicker">Next stop</p>
+            <h2>See how every part fits together.</h2>
+          </div>
+          <a class="button button-light" href="/generic">Open fundamentals <span>→</span></a>
+        </section>
+      </main>
+
+      {{> footer}}
+    </div>
+  </body>
+</html>

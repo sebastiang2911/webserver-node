@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tools and development workflow used in the Node.js course project." />
+    <title>{{title}} | Node Course</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body id="top">
+    <div class="page-shell">
+      {{> header}}
+
+      <main>
+        <section class="page-hero toolkit-hero">
+          <p class="eyebrow"><span></span> Module 02 / Toolkit</p>
+          <h1>The tools behind the <em>workflow.</em></h1>
+          <p>A focused stack that keeps development typed, repeatable and fast.</p>
+        </section>
+
+        <section class="tool-grid">
+          <article class="tool-card tool-node"><span class="tool-symbol">N</span><div><h2>Node.js</h2><p>JavaScript runtime</p></div><strong>Runtime</strong></article>
+          <article class="tool-card"><span class="tool-symbol">Ex</span><div><h2>Express</h2><p>Web framework</p></div><strong>Server</strong></article>
+          <article class="tool-card"><span class="tool-symbol">TS</span><div><h2>TypeScript</h2><p>Static type system</p></div><strong>Language</strong></article>
+          <article class="tool-card"><span class="tool-symbol">H</span><div><h2>Handlebars</h2><p>View templates</p></div><strong>Views</strong></article>
+          <article class="tool-card"><span class="tool-symbol">Y</span><div><h2>Yarn</h2><p>Dependency manager</p></div><strong>Packages</strong></article>
+          <article class="tool-card"><span class="tool-symbol">↻</span><div><h2>Nodemon</h2><p>Automatic restarts</p></div><strong>DX</strong></article>
+        </section>
+
+        <section class="section command-section">
+          <div class="section-heading">
+            <p class="kicker">Daily commands</p>
+            <h2>A tiny development loop.</h2>
+            <p>Install once, start the server, then let Nodemon handle every restart.</p>
+          </div>
+          <div class="command-list">
+            <div class="command"><span>01</span><div><code>yarn install</code><p>Install exact dependencies from the lockfile.</p></div><button type="button" data-copy="yarn install">Copy</button></div>
+            <div class="command"><span>02</span><div><code>cp .env.example .env</code><p>Create the local environment configuration.</p></div><button type="button" data-copy="cp .env.example .env">Copy</button></div>
+            <div class="command"><span>03</span><div><code>yarn start</code><p>Launch the development server with file watching.</p></div><button type="button" data-copy="yarn start">Copy</button></div>
+            <div class="command"><span>04</span><div><code>yarn tsc --noEmit</code><p>Check TypeScript without generating build files.</p></div><button type="button" data-copy="yarn tsc --noEmit">Copy</button></div>
+          </div>
+        </section>
+
+        <section class="section architecture">
+          <div class="section-heading">
+            <p class="kicker">Project anatomy</p>
+            <h2>Everything has a home.</h2>
+          </div>
+          <div class="file-tree">
+            <div class="tree-line root-line"><span>◆</span><strong>06-webserver/</strong></div>
+            <div class="tree-line"><span>├─</span><strong>index.ts</strong><em>server and routes</em></div>
+            <div class="tree-line"><span>├─</span><strong>views/</strong><em>Handlebars pages and partials</em></div>
+            <div class="tree-line"><span>├─</span><strong>public/</strong><em>browser-ready CSS and JavaScript</em></div>
+            <div class="tree-line"><span>├─</span><strong>package.json</strong><em>scripts and dependencies</em></div>
+            <div class="tree-line"><span>└─</span><strong>.env</strong><em>local configuration</em></div>
+          </div>
+        </section>
+
+        <section class="cta-panel">
+          <div><p class="kicker">Live check</p><h2>Ask the server to say hello.</h2></div>
+          <a class="button button-light" href="/hello-world">Open /hello-world <span>→</span></a>
+        </section>
+      </main>
+
+      {{> footer}}
+    </div>
+  </body>
+</html>
